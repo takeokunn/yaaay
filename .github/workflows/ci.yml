@@ -8,26 +8,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: ['7.3', '7.4', '8.0']
+        php-version: ['8.0']
     steps:
     # setup
     - name: Setup PHP ${{ matrix.php-version }}
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-version }}
-        extension-csv: mbstring
+        extension-csv: mbstring dom
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Check PHP Version
-      run: php -v
 
     # composer
-    - name: Check Composer Version
-      run: composer -V
     - name: Validate composer.json and composer.lock
       run: composer validate
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress
 
     # tests
     - name: Run lint
