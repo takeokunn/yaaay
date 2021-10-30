@@ -1,0 +1,44 @@
+{
+    "name": "takeokunn/yaaay",
+    "description": "php pre-processor",
+    "license": "MIT",
+    "keywords": [
+        "pre-processor"
+    ],
+    "authors": [
+        {
+            "name": "takeokunn",
+            "email": "bararararatty@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yaaay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yaaay\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "stan": "vendor/bin/phpstan analyze --level 8 src/",
+        "lint": "vendor/bin/phpcs --extensions=php ."
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "require": {
+        "nikic/php-parser": "^4.13",
+        "symfony/console": "^5.3"
+    },
+    "require-dev": {
+        "phpbench/phpbench": "^1.1",
+        "phpstan/phpstan": "^0.12.99",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}

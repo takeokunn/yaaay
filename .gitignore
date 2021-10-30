@@ -1,0 +1,4 @@
+/vendor/
+.phpunit.result.cache
+.ac-php-conf.json
+.php-cs-fixer.cache
